@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breweries by State</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body style="background-color:#393E46;text-align:center;color:silver;margin-top:70px;">
+
+  <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <h4>Name</h4>
+            </div>
+            <div class="col-md-2">
+              <h5>Country/State/City</h5>
+            </div>
+            <div class="col-md-2">
+              <h4>Brewery Type</h4>
+            </div>
+            <div class="col-md-2">
+              <h4>Phone</h4>
+            </div>
+            <div class="col-md-2">
+              <h4>Longitude</h4>
+            </div>
+            <div class="col-md-2">
+              <h4>Latitude</h4>
+            </div>
+          </div>
+        </div>
+        <hr width="90%;" style="margin-left:70px;">
+    {% for brewery in breweries_by_state: %}
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <h6>{{ brewery['name'] }}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{ brewery['country'] }}/{{ brewery['state'] }}/{{ brewery['city'] }}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{ brewery['brewery_type'] }}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{ brewery['phone'] }}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{ brewery['longitude'] }}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{ brewery['latitude'] }}</h6>
+            </div>
+          </div>
+        </div>
+        <hr width="90%;" style="margin-left:70px;">
+    {% endfor %}
+
+</body>
+</html>

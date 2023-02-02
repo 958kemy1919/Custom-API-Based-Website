@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Breweries</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body style="background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('https://vgor-bucket.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2021/06/23154102/36fa65c6a529221bbb2f0d07530dd343-7-1400x800.jpeg') no-repeat;">
+
+        <button style="margin-top:150px;margin-left:450px;padding:20px;font-size:2.5rem;font-weight:bold;" type="button" class="btn btn-secondary"><a href="{{ url_for('find_breweries') }}" style="text-decoration: none;color:silver;">Open Breweries in USA</a></button>
+        <br> <br><br><br>
+        <div class="container">
+            <form action="{{ url_for('search_by_city') }}" method="post">
+                <label style="color:silver;font-weight:bold;font-size:1.5rem;margin-left:140px;">What City do you want Breweries from?</label>
+                <input type="text" name="city" class="form-control" placeholder="Enter the name of the City" style="width:70%;display:inline;margin-left:140px;">
+                <button style="padding:10px;font-size:1rem;font-weight:bold;" type="submit" class="btn btn-secondary">Search</button>
+            </form>
+        </div>
+        <br>
+        <div class="container">
+            <form action="{{ url_for('search_by_state') }}" method="post">
+                <label style="color:silver;font-weight:bold;font-size:1.5rem;margin-left:140px;">What State do you want Breweries from?</label>
+                <input type="text" name="state" class="form-control" placeholder="Enter the name of the State" style="width:70%;display:inline;margin-left:140px;">
+                <button style="padding:10px;font-size:1rem;font-weight:bold;" type="submit" class="btn btn-secondary">Search</button>
+            </form>
+        </div>
+
+</body>
+</html>
